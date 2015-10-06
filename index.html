@@ -2,33 +2,34 @@
 <html ng-app="app">
 	<head>
 		
-		  <link href="reset.css" rel="stylesheet" />
-		  		  <link href="site.css" rel="stylesheet" />
-			
+		
+		  		 <link href="reset.css" rel="stylesheet" />
+					  <link href="./bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet" />
+			 
+			    <link href="site.css" rel="stylesheet" />
 							
 	<head>
 		<body >
-			<div class="main">	
-			 <header class="site-header">
-				
-			</header>
-			
-		
-			
-				<nav class="left-menu">
-					<header class="">
-						MENU
-					</header>
-					<ul>
-						<li>
+			<header>
+								   <nav class="blue darken-1">
+									    <ul class="right hide-on-med-and-down">
+    <li><a href="#!">First Sidebar Link</a></li>
+    <li><a href="#!">Second Sidebar Link</a></li>
+  </ul>
+ 		    <ul id="slide-out" class="side-nav fixed" >
+  	<li>
 							<a ui-sref="summary">Orders Summary</a>
 						</li>
 							<li>
 							<a ui-sref="orders">	Orders</a>
 						</li>
-						
-					</ul>
-				</nav>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse">open<i class="mdi-navigation-menu">THIS IS MY MENU</i></a>
+</nav>
+			</header>
+		
+     <div class="main">	
+			
 				<section class="content-section" >
 			        <div class='main-content' >
 								 <header class="page-header">
@@ -40,18 +41,24 @@
 					</div>
 					<div class="statistics-section">
 						<header class="page-header">
-							<h1>STATISTICS</h1>
+							<strong>STATISTICS</strong>
+							
 						</header>
-				      <div class="details">
-						<div class="row">
-							<div class="column column-title">Total Orders Received</div><div class="column">300</div>
-						</div>
-						<div class="row">
-								<div class="column column-title">Total Orders Delivered</div><div class="column">210</div>
-							</div>
-						 <div class="row">   
-							<div class="column column-title">Total Orders Pending</div><div class="column">90</div>
-						</div>
+				        <div class="card">
+						<table>
+							
+							<tbody>
+								<tr>
+									<th>Total Items in preparation </th><td>{{inPreparation}}</td>
+								</tr>
+								<tr>
+									<th>Total Items ready to ship</th><td>{{readyToShip}}</td>
+								</tr>
+								<tr>
+									<th>Total items shipped</th><td>{{shipped}}</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 					 
 				</section>
@@ -59,7 +66,11 @@
 				
 				 <script type="text/ng-template" id="orders.html">
                      	  <header class="order-summary-header">
-							  <input type="text" ng-model='orderId' placeholder="Filter Orders summary">
+						   
+							 
+							  <input  type="text" ng-model='orderId' placeholder="Filter Orders summary">
+							
+							  
 						</header>
 						  <table class="">
 						 <thead>
@@ -70,7 +81,7 @@
 						 </thead>
 						 <tbody>
 							 <tr ng-repeat="item in orders.list | filter: orderId track by $index ">
-								 <td>{{item.orderId}}</td><td>{{item.itemName}}</td><td>{{item.quantity}}</td><td>{{item.unitPrice}}</td><td>{{item.totalPrice}}</td><td>{{item.orderDate}}</td><td>{{item.status}}</td><td><button ng-click='controller.edit(item)' >Edit</button></td>
+								 <td>{{item.orderId}}</td><td>{{item.itemName}}</td><td>{{item.quantity}}</td><td>{{item.unitPrice}}</td><td>{{item.totalPrice}}</td><td>{{item.orderDate}}</td><td>{{item.status}}</td><td><a ui-sref='edit({id:$index})' >Edit</a></td>
 							 </tr>
 							
 							 </tbody>
@@ -89,23 +100,52 @@
 						 </thead>
 						 <tbody>
 							 <tr ng-repeat="item in orders.summary | filter: orderId track by $index ">
-								 <td>{{item.orderId}}</td><td>{{item.numberOfItems}}</td><td>{{item.totalOrderPrice}}</td><td>{{item.orderDate}}</td><td>{{item.status}}</td>
+								 <td>{{item.orderId}}</td><td>{{item.quantity}}</td><td>{{item.totalPrice}}</td><td>{{item.orderDate}}</td><td>{{item.status}}</td>
 							 </tr>
 							
 							 </tbody>
 					 </table>
 				 </script>
-				 	 <script type="text/ng-template" id="edit.html">
-				  <h1>Edit<h1>
-				  
-				    
+				 <script type="text/ng-template" id="edit.html">
+					  <header class="order-summary-header">
+							
+					</header>
+				  		 <div>
+						<header>
+							Order ID:{{order.orderId}} {{order.status}}
+						</header>
+						<div >
+					  <p>
+      <input name="group1" type="radio" id="test1" ng-model="order.status" value="In Preparation" />
+      <label for="test1">In Preparation</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2" ng-model="order.status" value="Ready to ship" />
+      <label for="test2">Ready to ship</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" type="radio" id="test3" ng-model="order.status" value="Shipped"   />
+      <label for="test3">Shipped</label>
+    </p>
+      
+						</div>
+						</div>
+						<button ng-click='controller.save()'>Save</button>
 					
 				 </script>
 
 			</div>
 					<script src="./bower_components/angular/angular.min.js"> </script>
+					<script src="./bower_components/jquery/dist/jquery.min.js"> </script>
+					<script src="./bower_components/materialize/dist/js/materialize.min.js"> </script>
 							<script src="./bower_components/angular-ui-router/release/angular-ui-router.js"> </script>
 					<script src="site.js"> </script>
+					<script>
+						$(function(){
+							 $(".button-collapse").sideNav();
+		
+						})
+					</script>
 		</body>
 		
 	

@@ -1,30 +1,16 @@
+body,html{
+	padding:0;
+	margin:0;
+}
 body{
 	height:100%;
 	width:100%;
 }
-table{
-	border:1px solid #dfdfdf;
-	
-}
-th,td{
-	height:30px;
-	padding: 10px;
-}
-th{
-	background:#dfdfdf;
-}
 
-
-tr:nth-child(even){
-	background-color: #fff;
-}
-tr:nth-child(odd){
-	background-color: #f8f8f8;
-	
-}
 .table-search{
 	column-span: 5;
 }
+
 .site-header{
 	height:50px;
 	background-color:black;
@@ -32,7 +18,11 @@ tr:nth-child(odd){
 	
 }
 .page-header{
-	    height: 50px;
+
+    height: 80px;
+    padding: 13px;
+    color: #3498DB;
+
 }
 .page-title {
 	margin: 0 auto;
@@ -41,8 +31,9 @@ tr:nth-child(odd){
 }
 
 .main{
-	height:100%;
-	width:100%;
+	height: 100%;
+    width: 90%;
+        margin: 0 0 0 20%;
 }
 .left-menu{
 	width:10%;
@@ -112,4 +103,93 @@ width: 70%;
 .column-title{
   background: #f8f8f8;
 	
+}
+
+/* 320px-480px */
+
+/* 480px-768px */
+
+/* 768px-1024px */
+
+@viewport{ width:device-width;}
+@-ms-viewport{width:device-width;} /* for microsoft device */
+@-o-viewport{width:device-width;} /* for old opera device */
+
+
+/* 320px-480px */
+@media only screen and (max-width:480px) {
+    .form-style-8 {
+width: 100%;
+display:block;
+}
+
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select {
+width: 100%;
+display:block;
+}
+.form-style-8 textarea {
+    resize: none;
+    overflow: hidden;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"] {
+width: 100%;
+display:block;
+}
+    .pull-right { float: none;
+    }
+        .btn-large { width:100%;
+    }
+        
+}
+
+/* 480px-768px */
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .form-style-8 {
+width: 100%;
+display:block;
+}
+
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select {
+width: 100%;
+display:block;
+}
+.form-style-8 textarea {
+    resize: none;
+    overflow: hidden;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"] {
+width: 100%;
+display:block;
+}
+   
+}
+
+/* 768px-1024px */
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .form-style-8 {
+width: 100%;
+display:block;
+}
 }
