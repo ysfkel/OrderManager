@@ -1,0 +1,115 @@
+body{
+	height:100%;
+	width:100%;
+}
+table{
+	border:1px solid #dfdfdf;
+	
+}
+th,td{
+	height:30px;
+	padding: 10px;
+}
+th{
+	background:#dfdfdf;
+}
+
+
+tr:nth-child(even){
+	background-color: #fff;
+}
+tr:nth-child(odd){
+	background-color: #f8f8f8;
+	
+}
+.table-search{
+	column-span: 5;
+}
+.site-header{
+	height:50px;
+	background-color:black;
+	width:100%;
+	
+}
+.page-header{
+	    height: 50px;
+}
+.page-title {
+	margin: 0 auto;
+	text-align:center;
+	    font-size: 30px;
+}
+
+.main{
+	height:100%;
+	width:100%;
+}
+.left-menu{
+	width:10%;
+	height:100%;
+	background-color:#e8e8e8;
+	float: left;
+	display: inline;
+	padding:0px;
+}
+.left-menu header{
+background-color:silver;
+padding:20px;
+text-align:center;
+}
+.left-menu  ul li{
+	padding:20px;
+	
+}
+
+.content-section{
+	width:90%;
+	float:left;
+	display: inline;
+}
+
+.order-summary{
+width: 70%;
+    float: left;
+    margin: 0 0 0 5%;
+}
+
+.order-summary-header input{
+	    width: 500px;
+    height: 30px;
+    border: 1px solid #e8e8e8;
+}
+
+
+
+.order-summary table{
+	width:90%;
+	
+}
+.statistics-section{
+	width:20%;
+	display:inline;
+	float:left;
+}
+.details{
+	width:100%;
+	float:left;
+	border:1px solid silver;
+}
+.details .row {
+	clear:both;
+	border:1px solid silver;
+}
+.details .row .column{
+	display:inline;
+	float:left;
+		height:30px;
+	padding: 10px;
+	
+	width:30%;
+}
+
+.column-title{
+  background: #f8f8f8;
+	
+}
