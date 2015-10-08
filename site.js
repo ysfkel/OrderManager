@@ -65,7 +65,7 @@
 		$urlRouterProvider.otherwise('/summary')
 	})
 	.controller('summaryController',function($scope,$rootScope){
-		
+		$rootScope.prepareStats();
 			$rootScope.title='Orders Summary';
 		
 		$scope.orders={};
@@ -99,8 +99,3 @@
 		
 	
 })()
-
-
-/*
-	 <th>Order Id</th><th>Number of Items </th> <th>Total Price</th><th>Order Date</th><th>Status</th>
-*/

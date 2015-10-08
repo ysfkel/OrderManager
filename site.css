@@ -22,12 +22,15 @@ body{
     height: 80px;
     padding: 13px;
     color: #3498DB;
+    margin: 20px 0 0 0;
 
 }
 .page-title {
-	margin: 0 auto;
-	text-align:center;
-	    font-size: 30px;
+	    margin: 0 auto;
+    text-align: center;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: #808080;
 }
 
 .main{
@@ -59,10 +62,13 @@ text-align:center;
 	display: inline;
 }
 
-.order-summary{
-width: 70%;
+.page-item{
+     width: 70%;
     float: left;
-    margin: 0 0 0 5%;
+    margin: 4% 1% 0 5%;
+    border: 3px solid #E3F2FD;
+    padding: 50px;
+    background-color: #fafafa;
 }
 
 .order-summary-header input{
@@ -103,6 +109,10 @@ width: 70%;
 .column-title{
   background: #f8f8f8;
 	
+}
+
+.font-white{
+    color: white
 }
 
 /* 320px-480px */
