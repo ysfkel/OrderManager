@@ -56,7 +56,7 @@
 		   $state.go('summary')
 	   }
 	   
-	    $scope.order=OrdersDataService.model.orders.list[$stateParams.id];
+	    $scope.order=OrdersDataService.model.orders.list[id];
 		$scope.controller={
 			save:function(){
 				OrdersDataService.model.prepareStats();
