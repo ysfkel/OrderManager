@@ -50,8 +50,13 @@
 	.controller('editController',function($scope,$rootScope,$stateParams,$state,OrdersDataService,SetStatisticsService){
 		$rootScope.title='Edit Order';
 	
-		$scope.order=OrdersDataService.model.orders.list[$stateParams.id];
-		
+	   var id=$stateParams.id || null;
+	   //if id is null, redirect to summary route
+	   if(!id){
+		   $state.go('summary')
+	   }
+	   
+	    $scope.order=OrdersDataService.model.orders.list[$stateParams.id];
 		$scope.controller={
 			save:function(){
 				OrdersDataService.model.prepareStats();
@@ -132,3 +137,4 @@
 		}
 	
 })()
+
