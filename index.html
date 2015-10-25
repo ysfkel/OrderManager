@@ -15,6 +15,7 @@
 			<header>
 				<nav class="blue darken-1">
 					<ul class="right hide-on-med-and-down">
+						<li></li>
 						<li><a href="#!">Designed by Yusuf Kelo</a></li>
 						<li><a href="#!">yusufkel@gmail.com</a></li>
 						<li><a href="#!">+971 554 112 774</a></li>
@@ -22,7 +23,7 @@
 					</ul>
 					<ul id="slide-out" class="side-nav fixed blue lighten-5">
 						<li>
-
+							<strong style="color:black">	{{AppTitle}}</strong>
 						</li>
 						<li>
 							<a ui-sref="summary">ORDERS SUMMARY</a>
@@ -30,7 +31,7 @@
 						<li>
 							<a ui-sref="orders">ORDERS LIST</a>
 						</li>
-			
+
 					</ul>
 					<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 				</nav>
@@ -41,12 +42,13 @@
 				<section class="content-section">
 					<div class='main-content'>
 						<header class="page-header">
-							<h1 class="page-title"> {{title}}</h1>
+
+							<h3 class="page-title"> {{title}}</h3>
 						</header>
 						<div class="page-item" ui-view>
 
 						</div>
-						
+
 					</div>
 					<div class="statistics-section">
 						<header class="page-header">
@@ -69,7 +71,7 @@
 										<th>Total items shipped</th>
 										<td>{{shipped}}</td>
 									</tr>
-										<tr class="blue lighten-5">
+									<tr class="blue lighten-5">
 										<th>Total Income</th>
 										<td>200 AED</td>
 									</tr>
@@ -112,6 +114,8 @@
 								<td>{{item.orderDate}}</td>
 								<td>{{item.status}}</td>
 								<td><a ui-sref='edit({id:$index})'>Edit</a></td>
+
+
 							</tr>
 
 						</tbody>
@@ -120,6 +124,7 @@
 				<script type="text/ng-template" id="summary.html">
 					<header class="order-summary-header">
 						<input type="text" ng-model='orderId' placeholder="Filter Orders summary">
+
 					</header>
 					<table class="">
 						<thead>
@@ -197,7 +202,7 @@
 
 
 
-         
+
 		</body>
 
 
