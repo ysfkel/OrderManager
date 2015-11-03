@@ -4,6 +4,7 @@
 
 
 		.run(function ($http, SetStatisticsService,APP_TITLE,$rootScope) {
+	
             $rootScope.AppTitle=APP_TITLE;
             
 			SetStatisticsService.initializeStatictics();
@@ -13,7 +14,7 @@
 	//ROUTER
 		.config(function ($stateProvider, $urlRouterProvider, headerTextProvider) {
 
-          
+    
 			$stateProvider
 
 				.state('summary', {
@@ -132,6 +133,7 @@
 			}
 		})
         .constant('APP_TITLE','MY ORDER MANAGER')
+		.value('clientId','8768768768686876876')
 		
 	//MODELS
 	function OrdersListModel(orders, statuses) {
