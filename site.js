@@ -132,7 +132,7 @@
 				}
 			}
 		})
-        .constant('APP_TITLE','MY ORDER MANAGER')
+        .constant('APP_TITLE','ANGULARJS DEMO')
 		.value('clientId','8768768768686876876')
 		
 	//MODELS
